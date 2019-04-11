@@ -3,13 +3,18 @@
 }
 body{
     margin: 0;
+    display: grid;
+    grid-template-areas: 'navbar navbar navbar navbar'
+                         'section section aside aside'
+                         'footer footer footer footer';
+    grid-template-rows:15vh 40vh 20vh;                
 }
 nav{
+   grid-area: navbar;
     background-color:maroon;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50px;
 }
 nav a{
     color:white;
@@ -42,6 +47,12 @@ nav a:hover{
     #menuHamburguer{
         display: flex;   
     }
+    body{
+         grid-template-areas:   'navbar navbar navbar navbar'
+                                'section section section aside'
+                                'footer footer footer aside';
+        grid-template-rows:10vh 50vh 20vh;                               
+    }
 }
 
 @media(max-width:425px){
@@ -49,7 +60,25 @@ nav a:hover{
         justify-content: flex-start;
         padding: 10px;
     }
-
+    body{
+        grid-template-areas:    'navbar navbar navbar navbar'
+                                'section section section section'
+                                'aside aside aside aside'
+                                'footer footer footer footer';
+grid-template-rows:10vh 35vh 35vh 15vh; 
+    }
 }
-    
+
+section{
+    grid-area: section;
+    background-color: orange;
+}
+aside{
+    grid-area: aside;
+    background-color: blue;
+}
+footer{
+    grid-area: footer;
+    background-color:red;
+}
 
